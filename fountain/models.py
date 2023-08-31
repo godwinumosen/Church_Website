@@ -8,7 +8,7 @@ class ChurchActivity (models.Model):
     content = models.TextField()
     img = models.ImageField(upload_to='images/')
     publish_date = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(max_length=250)
+    slugs = models.SlugField(max_length=250)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
     class Meta:
