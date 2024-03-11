@@ -1,31 +1,13 @@
+// to get current year
+function getYear() {
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
+    document.querySelector("#displayYear").innerHTML = currentYear;
+}
+getYear();
 
-  (function ($) {
-  
-  "use strict";
-
-    // PRE LOADER
-    $(window).load(function(){
-      $('.preloader').delay(500).slideUp('slow'); // set duration in brackets    
-    });
-
-    // NAVBAR
-    $(".navbar").headroom();
-
-    $('.navbar-collapse a').click(function(){
-        $(".navbar-collapse").collapse('hide');
-    });
-
-    $('.slick-slideshow').slick({
-      autoplay: true,
-      infinite: true,
-      arrows: false,
-      fade: true,
-      dots: true,
-    });
-
-    $('.slick-testimonial').slick({
-      arrows: false,
-      dots: true,
-    });
-    
-  })(window.jQuery);
+// nav menu 
+function openNav() {
+    document.getElementById("myNav").classList.toggle("menu_width")
+    document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style")
+}

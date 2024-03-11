@@ -3,12 +3,12 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
 
-class ChurchActivity (models.Model):
+class ChurchActivityModel (models.Model):
     title = models.CharField(max_length=250)
     content = models.TextField()
     img = models.ImageField(upload_to='images/')
     publish_date = models.DateTimeField(auto_now_add=True)
-    slugs = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
     class Meta:

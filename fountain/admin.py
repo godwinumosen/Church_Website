@@ -1,13 +1,14 @@
 from django.contrib import admin
-from .models import ChurchActivity
+from .models import ChurchActivityModel
 from .models import Ministries
 from .models import Pastors
 from .models import UpcomingEvent
 
 
 class AdminChurchActivity (admin.ModelAdmin):
-    list_display = []
-admin.site.register(ChurchActivity,AdminChurchActivity)
+    prepopulated_fields = {'slug': ('title',)}
+    list_display = ['title','content','author','img','slug']
+admin.site.register(ChurchActivityModel,AdminChurchActivity)
 
 class AdminMinistries(admin.ModelAdmin):
     list_display = []
