@@ -6,7 +6,7 @@
   <!-- first Church section -->
   <section class="about_section layout_padding-bottom">
     <div class="square-box">
-      <img src="{% static 'images/s-1.jpg' %}" alt="">
+      <img src="{% static 'images/holy.jpg' %}" alt="">
     </div>
     <div class="container">
       <div class="row">
@@ -74,14 +74,19 @@
         {% for post in object_list %}
         <div class="box">
           <div class="img-box">
+            <a href="{% url 'detail' post.pk %}">
             {% if post.img %}
             <img src="{{ post.img.url }}"height="250px" alt="">
             {% endif %}
+            </a>
           </div>
+          <a href="{% url 'detail' post.pk %}">
           <div class="detail-box">
             <h6>{{ post.title|truncatechars:20}}</h6>
+          </a>
             <p>{{ post.content|truncatechars:65 }}</p>
           </div>
+      
         </div>
         {% endfor %}
     </div>
@@ -142,16 +147,20 @@
         </p>
       </div>
       <div class="sale_container">
-        {% for post in object_list %}
+        {% for second_construction in second_constructions %}
         <div class="box">
           <div class="img-box">
-            {% if post.img %}
-            <img src="{{ post.img.url }}"height="200px" alt="">
+            <a href="">
+            {% if second_construction.img %}
+            <img src="{{ second_construction.img.url }}"height="220px" alt="">
             {% endif %}
+            </a>
           </div>
           <div class="detail-box">
-            <h6>{{ post.title|truncatechars:20}}</h6>
-            <p>{{ post.content|truncatechars:65 }}</p>
+            <a href="">
+            <h6>{{ second_construction.title|truncatechars:20}}</h6>
+            </a>
+            <p>{{ second_construction.content|truncatechars:49 }}</p>
           </div>
         </div>
         {% endfor %}

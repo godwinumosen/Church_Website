@@ -5,7 +5,7 @@
   <!-- about section -->
   <section class="about_section layout_padding-bottom">
     <div class="square-box">
-      <img src="{% static 'images/d-1.jpg' %}" alt="">
+      <img src="{% static 'images/holy.jpg' %}" alt="">
     </div>
     <div class="container">
       <div class="row">
@@ -16,10 +16,10 @@
                   <div id="imageSlider" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                        <div class="carousel-item active">
-                          <img src="{% static 'images/about-img.jpg' %}" class="d-block w-100" alt="Image 1">
+                          <img src="{% static 'images/hero-bg.jpg' %}"height="400px" class="d-block w-100" alt="Image 1">
                        </div>
                        <div class="carousel-item">
-                        <img src="{% static 'images/s-1.jpg' %}" class="d-block w-100" alt="Image 2">
+                        <img src="{% static 'images/holy.jpg' %}"height="400px" class="d-block w-100" alt="Image 2">
                        </div>
                        
                        <!-- Add more carousel items as needed -->
@@ -50,8 +50,8 @@
               in
               some form, by injected humour, or randomised words
             </p>
-            <a href="">
-              Read More
+            <a href="{% url 'home' %}">
+              Home
             </a>
           </div>
         </div>

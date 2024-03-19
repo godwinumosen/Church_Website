@@ -1,0 +1,61 @@
+{% load static %}
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/ -->
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-video-catalog.css' %}">
+</head>
+<body>
+	<div class="tm-page-wrap mx-auto">
+		<div class="position-relative">
+			<div class="potition-absolute tm-site-header">
+				<div class="container-fluid position-relative">
+					<div class="row">						
+                        <div class="col-7 col-md-4">
+                            <a href="{% url 'home' %}" class="tm-bg-black text-center ">
+                                <h1 class="tm-site-name">Home</h1>
+                            </a>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-1">
+				<div class="text-center">        	
+				</div>                
+            </div>
+			<!-- Header image -->
+            <div id="tm-fixed-header-bg"></div> 
+		</div>
+
+		<!-- Page content -->
+		<div class="container-fluid">
+			<div class="mx-auto tm-content-container">
+				<main>
+					<div class="row mb-5 pb-4">
+						<div class="col-12">
+                            {% if object.img %}
+                            <img src="{{ object.img.url }}"height="300px" alt="" class="img-fluid wc-image">
+                            {% endif %}
+                          </div>
+						</div>
+					</div>
+					<div class="row mb-5 pb-5">
+						<div class="col-xl-8 col-lg-7">
+							<!-- Video description -->
+							<div class="tm-video-description-box">
+								<h2 class="mb-5 tm-video-title">{{ object.title }} </h2>
+								<p class="mb-4">{{ object.content|truncatechars:9000 }}</p>	
+							</div>
+                            <small>
+                                <a href="{% url 'home' %}" class="btn btn-primary"><i class="fa fa-angle-left">Back</i></a>
+                             </small>
+                             <span> 
+                             </a>&nbsp;| Posted by: <i class="fa fa-user"></i> {{ object.author }} &nbsp;|&nbsp; <i class="fa fa-calendar"></i>
+                            {{ object.publish_date }}</span>
+						</div>
