@@ -56,7 +56,7 @@
     </div>
   </section>
 
-  <!-- end about section -->
+  
 
   <!-- sale section -->
 
@@ -75,7 +75,7 @@
         <div class="box">
           <div class="img-box">
             {% if post.img %}
-            <img src="{{ post.img.url }}" alt="">
+            <img src="{{ post.img.url }}"height="250px" alt="">
             {% endif %}
           </div>
           <div class="detail-box">
@@ -129,6 +129,37 @@
   </section>
 
   <!-- end deal section -->
+   <!-- sale section -->
+
+   <section class="sale_section layout_padding-bottom">
+    <div class="container-fluid">
+      <div class="heading_container">
+        <h2>
+          Fountain Living Church
+        </h2>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the
+        </p>
+      </div>
+      <div class="sale_container">
+        {% for post in object_list %}
+        <div class="box">
+          <div class="img-box">
+            {% if post.img %}
+            <img src="{{ post.img.url }}"height="200px" alt="">
+            {% endif %}
+          </div>
+          <div class="detail-box">
+            <h6>{{ post.title|truncatechars:20}}</h6>
+            <p>{{ post.content|truncatechars:65 }}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+  </section>
+
+
+  
 
 
 {% endblock %}

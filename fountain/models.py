@@ -17,6 +17,21 @@ class ChurchActivityModel (models.Model):
     def __str__(self):
         return self.title
     
+class SecondChurchActivityModel (models.Model):
+    title = models.CharField(max_length=250)
+    content = models.TextField()
+    img = models.ImageField(upload_to='images/')
+    publish_date = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=250)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    class Meta:
+        ordering =['-publish_date']
+    
+    def __str__(self):
+        return self.title
+    
+    
 class Pastors (models.Model):
     pastor_name = models.CharField(max_length=250)
     pastor_img = models.ImageField(upload_to='image/')
